@@ -1,0 +1,39 @@
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.exe.config
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.csprojResolveAssemblyReference.cache
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form1.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form2.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Properties.Resources.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.csproj.GenerateResource.Cache
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.exe
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.pdb
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.exe
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.pdb
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form3.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form4.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form5.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form6.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form7.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form8.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form9.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form10.resources
+C:\Users\abdul\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form11.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.exe.config
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.exe
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.pdb
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.exe
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\bin\Debug\Lohare Qlander.pdb
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.csprojResolveAssemblyReference.cache
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form1.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form10.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form11.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form2.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form3.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form4.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form5.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form6.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form7.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form8.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form9.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Properties.Resources.resources
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare Qlander.csproj.GenerateResource.Cache
+C:\Users\abdul\OneDrive\Documents\Visual Studio 2012\Projects\Lohare Qlander\Lohare Qlander\obj\Debug\Lohare_Qlander.Form12.resources
