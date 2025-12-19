@@ -8,7 +8,7 @@
 
 **4D Linked List Notepad** is a **console-based text editor** implemented in **C++** that uses a **4D doubly linked list** to store characters and lines dynamically. This project also features a **custom undo (Ctrl+Z) and redo (Ctrl+Y) functionality** using stacks to manage text snapshots.
 
-This was a **group project** completed collaboratively by **Muhammad Abdullah** and **[Your Friend’s Name]** as part of our **Data Structures and Algorithms coursework**.
+This was a **group project** completed collaboratively by **Muhammad Abdullah** and **Faizan Ali** as part of our **Data Structures and Algorithms coursework**.
 
 * **Language:** C++
 * **Platform:** Windows Console Application (uses `<conio.h>` for key input)
