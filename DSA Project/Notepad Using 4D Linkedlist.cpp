@@ -1,29 +1,59 @@
 #include <iostream>
-#include <conio.h>  // For _getch()
+#include <conio.h>
 #include <string>
-#include <cstdlib>  // For system("cls")
+#include <cstdlib>
 
 using namespace std;
 
 // Node structure for 4D linked list
 struct Node {
-    char data;         // Character data
-    Node* up;          // Link to previous line
-    Node* down;        // Link to next line
-    Node* left;        // Link to previous character in the same line
-    Node* right;       // Link to next character in the same line
-
-    // Constructor to initialize the node
+    char data;
+    Node* up;
+    Node* down;
+    Node* left;
+    Node* right; 
     Node(char c) : data(c), up(NULL), down(NULL), left(NULL), right(NULL) {}
 };
+
+struct TextStack {
+    string text;
+    TextStack* next;
+};
+
+class RedoStack {
+    TextStack* top;
+public:
+    RedoStack() { top = NULL; }
+
+    void push(string t) {
+        TextStack* n = new TextStack;
+        n->text = t;
+        n->next = top;
+        top = n;
+    }
+
+    bool empty() {
+        return top == NULL;
+    }
+
+    string pop() {
+        TextStack* temp = top;
+        string t = temp->text;
+        top = temp->next;
+        delete temp;
+        return t;
+    }
+};
+
 
 // Notepad class to manage the 4D linked list
 class Notepad {
 private:
-    Node* head;           // Head of the text
-    Node* currentLine;    // Current line in the text
-    Node* currentChar;    // Current character in the line
-    int cursorPos;        // Track horizontal position of the cursor for up and down movement
+    Node* head;
+    Node* currentLine;
+    Node* currentChar;
+    int cursorPos;
+    RedoStack redoStack;
 
 public:
     Notepad() {
@@ -35,7 +65,7 @@ public:
 
     // Initialize the notepad with a single empty node
     void initNotepad() {
-        Node* newNode = new Node(' '); // Start with a blank node
+        Node* newNode = new Node(' ');
         head = newNode;
         currentLine = newNode; 
         currentChar = newNode;
@@ -44,8 +74,8 @@ public:
     // Function to move cursor up
     void moveUp() {
         if (currentLine && currentLine->up) {
-            Node* temp = currentLine->up;  // Move to the line above
-            int tempCursorPos = cursorPos; // Store the current horizontal position
+            Node* temp = currentLine->up;
+            int tempCursorPos = cursorPos;
             currentLine = temp;
             currentChar = currentLine;
 
@@ -60,8 +90,8 @@ public:
     // Function to move cursor down
     void moveDown() {
         if (currentLine && currentLine->down) {
-            Node* temp = currentLine->down; // Move to the line below
-            int tempCursorPos = cursorPos;  // Store the current horizontal position
+            Node* temp = currentLine->down;
+            int tempCursorPos = cursorPos;
             currentLine = temp;
             currentChar = currentLine;
 
@@ -77,7 +107,7 @@ public:
     void moveLeft() {
         if (currentChar && currentChar->left) {
             currentChar = currentChar->left;
-            cursorPos--; // Decrease cursor position
+            cursorPos--;
         }
     }
 
@@ -85,13 +115,13 @@ public:
 	void moveRight() {
 	    if (currentChar && currentChar->right) {
 	        currentChar = currentChar->right;
-	        cursorPos++; // Increase cursor position
+	        cursorPos++;
 	    } 
 	    // If at the end of the line, move to the start of the next line
 	    else if (currentLine && currentLine->down) {
-	        currentLine = currentLine->down; // Move to the next line
-	        currentChar = currentLine;       // Move to the start of the next line
-	        cursorPos = 0;                   // Reset cursor position to 0
+	        currentLine = currentLine->down;
+	        currentChar = currentLine;
+	        cursorPos = 0;
 	    }
 	}
 
@@ -104,43 +134,43 @@ public:
         newNode->right = currentChar->right;
 
         if (currentChar->right) {
-            currentChar->right->left = newNode; // Link the right neighbor
+            currentChar->right->left = newNode;
         }
-        currentChar->right = newNode;  // Link currentChar to the new node
-        currentChar = newNode;         // Move to the new node
-        cursorPos++;                   // Move cursor right
+        currentChar->right = newNode;
+        currentChar = newNode;
+        cursorPos++;
     }
 
     // Function to handle Backspace and delete across lines
     void deleteCharacter() {
-        if (currentChar && currentChar->left) {  // If not at the start of the line
+        if (currentChar && currentChar->left) {
             Node* temp = currentChar;
             currentChar = currentChar->left;
-            currentChar->right = temp->right;  // Skip over the node to be deleted
+            currentChar->right = temp->right;
 
             if (temp->right) {
-                temp->right->left = currentChar;  // Maintain left link of the next node
+                temp->right->left = currentChar;
             }
             delete temp;
-            cursorPos--; // Update the cursor position
+            cursorPos--;
         } 
-        else if (currentLine->up) {  // If at the start of the line, go to the previous line
+        else if (currentLine->up) {
             Node* tempLine = currentLine;
-            moveUp();  // Move cursor to the previous line
+            moveUp();
             currentChar = currentLine;
             cursorPos = 0;
             while (currentChar && currentChar->right) {
-                currentChar = currentChar->right;  // Move to the end of the previous line
+                currentChar = currentChar->right;
                 cursorPos++;
             }
 
             // If there's something to delete in the previous line, delete it
             if (currentChar && currentChar->left) {
-                deleteCharacter();  // Recursively delete the character from the previous line
+                deleteCharacter();
             } else {
-                currentLine->down = tempLine->down;  // Remove the empty line
+                currentLine->down = tempLine->down;
                 if (tempLine->down) {
-                    tempLine->down->up = currentLine;  // Maintain the link
+                    tempLine->down->up = currentLine;
                 }
                 delete tempLine;
             }
@@ -149,66 +179,90 @@ public:
 
     // Function to handle the Enter key and create a new line
 	void insertNewLine() {
-	    // Create a new blank node for the new line
 	    Node* newLine = new Node(' '); 
 	    newLine->up = currentLine;
 	    newLine->down = currentLine->down;
 	
 	    if (currentLine->down) {
-	        currentLine->down->up = newLine;  // Link the current line down pointer
+	        currentLine->down->up = newLine;
 	    }
-	    currentLine->down = newLine;  // Link the current line to the new line
-	
-	    // Move characters after the cursor to the new line
-	    Node* temp = currentChar->right;
-	    currentChar->right = NULL;  // Break the link to the rest of the line
+	    currentLine->down = newLine;
+
 	    
+	    Node* temp = currentChar->right;
+	    currentChar->right = NULL;
 	    // Transfer characters to the new line
 	    Node* newLineChar = newLine;
 	    while (temp) {
-	        Node* next = temp->right;  // Store the next character
-	        newLineChar->right = temp; // Move the current character to the new line
-	        temp->left = newLineChar;  // Adjust the left pointer
-	        newLineChar = temp;        // Move to the next character
-	        temp = next;               // Move to the next character in the old line
+	        Node* next = temp->right;
+	        newLineChar->right = temp;
+	        temp->left = newLineChar;
+	        newLineChar = temp;
+	        temp = next;
 	    }
 	
-	    // Update the current position to the new line
+	    
 	    currentLine = newLine;
 	    currentChar = newLine;
-	    cursorPos = 0;  // Reset cursor position
+	    cursorPos = 0;
 	}
 
+
+    string getAllText() {
+        string text;
+        Node* line = head;
+        while (line) {
+            Node* ch = line->right;
+            while (ch) {
+                text += ch->data;
+                ch = ch->right;
+            }
+            if (line->down) text += '\n';
+            line = line->down;
+        }
+        return text;
+    }
+
+
+    void rebuildFromText(string text) {
+        clearNotepad();
+        for (char c : text) {
+            if (c == '\n')
+                insertNewLine();
+            else
+                insertCharacter(c);
+        }
+    }
+
     // Function to clear the entire text (undo operation)
-    void clearNotepad() {
-        while (head != NULL) {
-            Node* tempLine = head;
-            while (tempLine != NULL) {
-                Node* tempChar = tempLine;
-                tempLine = tempLine->right;
-                delete tempChar;
+     void clearNotepad() {
+        while (head) {
+            Node* ch = head;
+            while (ch) {
+                Node* next = ch->right;
+                delete ch;
+                ch = next;
             }
             head = head->down;
         }
-        initNotepad(); // Reinitialize the notepad to an empty state
+        initNotepad();
     }
 
     // Function to display the notepad content with a vertical cursor at the current position
 	void display() {
-	    Node* tempLine = head;  // Start from the first line
+	    Node* tempLine = head;
 	    while (tempLine != NULL) {
-	        Node* tempChar = tempLine;  // Start from the first character in the line
+	        Node* tempChar = tempLine;
 	        while (tempChar != NULL) {
-	            // Display the character, and if it's the current character, show the cursor after it
 	            if (tempChar == currentChar) {
-	                cout << tempChar->data << '|';  // Display the character followed by the cursor
+	                cout << tempChar->data << '|';
 	            } else {
-	                cout << tempChar->data;  // Otherwise just display the character
+	                cout << tempChar->data;
 	            }
-	            tempChar = tempChar->right;  // Move to the next character
+	            tempChar = tempChar->right;
 	        }
-	        cout << endl;  // Move to the next line after printing all characters in the current line
-	        tempLine = tempLine->down;  // Move to the next line
+	        cout << endl;
+	        tempLine = tempLine->down;
 	    }
 	    cout << endl;
 	}
@@ -216,7 +270,7 @@ public:
     // Function to handle user input from console
     void handleInput() {
         while (true) {
-            int input = _getch(); // Get a single character input from user
+            int input = _getch();
 
             if (input == 27) { // Escape key to exit
                 break;
@@ -235,11 +289,16 @@ public:
                 deleteCharacter();
             } else if (input == 13) { // Enter key
                 insertNewLine();
-            } else if (input == 26) { // Ctrl+Z for undo (clear notepad)
+            }
+            else if (input == 26) {   // Ctrl+Z
+                redoStack.push(getAllText());
                 clearNotepad();
-            } else if (input == 127) { // Ctrl+Z as an alternative (ASCII DEL key)
-                clearNotepad();
-            } else {
+            }
+            else if (input == 25) {   // Ctrl+Y
+                if (!redoStack.empty())
+                    rebuildFromText(redoStack.pop());
+            }
+            else {
                 insertCharacter(static_cast<char>(input));
             }
 
@@ -253,7 +312,7 @@ int main() {
     Notepad notepad;
     notepad.initNotepad();
     cout << "Simple Notepad (Press ESC to exit)\n";
-    notepad.display(); // Display initial content
+    notepad.display();
     notepad.handleInput();
     return 0;
 }
